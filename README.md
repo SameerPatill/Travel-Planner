@@ -8,7 +8,7 @@ Proposed Features:-
 2. Trains Search
 3. Customised Tours
 4. Destinations
-5. International Travels
+5. Domestic & International Travels
 6. Season-wise destination categories
 7. Explore tab for India and International destinations
 8. Maps/Google Earth API Integration
