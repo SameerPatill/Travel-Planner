@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerala Tour Route</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    <style>
+        #map {position: absolute; top: 0; bottom: 0; left: 0; right: 0;}
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script>
+        var map = L.map('map').setView([10.1632, 76.6413], 8);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            }).addTo(map);
+            
+            L.Routing.control({
+            waypoints: [
+                L.latLng(9.429695435095786, 76.74852876614243),
+                L.latLng( 8.530622263272445, 76.9375520645585)
+            ]
+            }).addTo(map);
+
+        L.Routing.control({
+            waypoints: [
+                L.latLng( 8.530622263272445, 76.9375520645585),
+                L.latLng(8.087994476473693, 77.53976901263708)
+            ]
+            }).addTo(map);
+
+        L.Routing.control({
+            waypoints: [
+                L.latLng(8.087994476473693, 77.53976901263708),
+                L.latLng(8.861018417300963, 76.86788288730601)
+            ]
+            }).addTo(map);
+
+        L.Routing.control({
+            waypoints: [
+                L.latLng(8.861018417300963, 76.86788288730601),
+                L.latLng(9.500526368194535, 76.3369550210769)
+            ]
+            }).addTo(map);
+        
+            L.Routing.control({
+            waypoints: [
+                L.latLng(9.500526368194535, 76.3369550210769),
+                L.latLng(9.585539214960965, 77.12117271966254)
+            ]
+            }).addTo(map);
+
+            L.Routing.control({
+            waypoints: [
+                L.latLng(9.585539214960965, 77.12117271966254),
+                L.latLng(10.08944816930627, 77.05956070418736)
+            ]
+            }).addTo(map);
+
+            L.Routing.control({
+            waypoints: [
+                L.latLng(10.08944816930627, 77.05956070418736),
+                L.latLng(9.946196916149159, 76.25526800138876)
+            ]
+            }).addTo(map);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ooty Tour Route</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    <style>
+        #map {position: absolute; top: 0; bottom: 0; left: 0; right: 0;}
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script>
+        var map = L.map('map').setView([10.1632, 76.6413], 8);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            }).addTo(map);
+            
+        L.Routing.control({
+            waypoints: [
+                L.latLng(11.411599480165211, 76.69616792381996),
+                L.latLng(12.982049200416233, 77.61375683823327)
+            ]
+            }).addTo(map);
+
+        L.Routing.control({
+            waypoints: [
+                L.latLng(12.982049200416233, 77.61375683823327),
+                L.latLng(12.42536850733848, 75.73905773930764)
+            ]
+            }).addTo(map);
+
+        L.Routing.control({
+            waypoints: [
+                L.latLng(12.42536850733848, 75.73905773930764),
+                L.latLng(12.299899478941542, 76.63499903475801)
+            ]
+            }).addTo(map);
+
+        L.Routing.control({
+            waypoints: [
+                L.latLng(12.299899478941542, 76.63499903475801),
+                L.latLng(11.411851881788666, 76.6950521249337)
+            ]
+            }).addTo(map);
+           
+        L.Routing.control({
+            waypoints: [
+                L.latLng(11.411851881788666, 76.6950521249337),
+                L.latLng(11.025123848977362, 76.96906572142532)
+            ]
+            }).addTo(map);
+
+    </script>
+</body>
+</html>

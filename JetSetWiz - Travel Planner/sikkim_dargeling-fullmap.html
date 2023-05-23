@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sikkim-Dargeling Trip Route</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    <style>
+        #map {position: absolute; top: 0; bottom: 0; left: 0; right: 0;}
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        var map = L.map('map').setView([10.1632, 76.6413], 8);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            L.Routing.control({
+            waypoints: [
+                L.latLng(26.69836119337628, 88.31335769180625),
+                L.latLng(27.33211755023159, 88.61708257923021)
+            ]
+            }).addTo(map).hide(); 
+
+        L.Routing.control({
+            waypoints: [
+                L.latLng(27.33211755023159, 88.61708257923021),
+                L.latLng(27.374862476926175, 88.7630566383821)
+            ]
+            }).addTo(map).hide();
+
+            L.Routing.control({
+            waypoints: [
+                L.latLng(27.374862476926175, 88.7630566383821),
+                L.latLng(27.168955083206342, 88.36715852855376)
+            ]
+            }).addTo(map).hide();
+
+    </script>
+</body>
+</html>

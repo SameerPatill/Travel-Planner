@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tourist - Travel Agency HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/dce976e4ed.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+    <style>
+        #map {position: relative; top: 0; bottom: 0; left: 0; right: 0; height: 1345px; width: 600px;}
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start  deleted -->
+    
+
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="" class="navbar-brand p-0">
+                <h1 class="text-primary m-0"><i class="fa fa-map-marker-alt me-3"></i>JetSetWiz</h1>
+                <!-- <img src="img/logo.png" alt="Logo"> -->
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="service.html" class="nav-item nav-link">Services</a>
+                    <a href="itinerary.html" class="nav-item nav-link active">Itinerary</a>
+                    <a href="package.html" class="nav-item nav-link">Packages</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="destination.html" class="dropdown-item">Destination</a>
+                            <a href="booking.html" class="dropdown-item">Booking</a>
+                            <a href="team.html" class="dropdown-item">Travel Guides</a>
+                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            <a href="404.html" class="dropdown-item">404 Page</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
+            </div>
+        </nav>
+
+        <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+            <div class="container py-5">
+                <div class="row justify-content-center py-5">
+                    <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+                        <h1 class="display-3 text-white animated slideInDown">Visit Australia</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Destinations</a></li>
+                                <li class="breadcrumb-item"><a href="#">International</a></li>
+                                <li class="breadcrumb-item text-white active" aria-current="page">Australia Tour</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar & Hero End -->
+
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <div id="map"></div>
+
+                        <div class="weather">
+                            <div id="ww_8a9c8d737aafd" v='1.3' loc='id' a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":["wl3207"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'><a href="https://weatherwidget.org/uk/" id="ww_8a9c8d737aafd_u" target="_blank">Безкоштовний HTML погодний інформер для сайту</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_8a9c8d737aafd"></script>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h6 class="section-title text-start text-primary pe-3" style="background-color: #15151f;">Travel Itinerary</h6>
+                    <h1 class="mb-4 text-light">You're in <span class="text-primary">Australia</span></h1><br>
+                    <div class="col-sm-6">
+                        <h4 class="mb-0 text-light"><i class="fa-solid fa-location-dot fa-flip me-2" style="color: #ffffff;"></i>Day 1</h4>
+                    </div>
+                    <br>
+                    <h4 class="text-primary">Sydney (2 Nights)</h4>
+                    <p class="mb-4" style="text-align: justify;">
+                        Mumbai to Mumbai tour guests will report at the Chhatrapati Shivaji Maharaj International Airport, Mumbai as per the scheduled flight departure time and proceed to Sydney.
+                        Upon arrival, the Veena World Tour Manager will guide all guests through the airport formalities and proceed to the city.
+                        Welcome to Sydney – a bustling city, known for its vibrant culture and adorned by stunning beaches and UNESCO World Heritage Sites. Immerse yourself in the beautiful natural landscapes and get ready for the eight most wonderful days of your life.
+                        In the evening, we visit the Sydney Tower Eye Observatory Deck, which is the tallest building in Sydney with an observatory deck offering a spectacular 360-degree view of the city.
+                    </p>
+
+                    <div class="col-sm-6">
+                        <h4 class="mb-0 text-light"><i class="fa-solid fa-location-dot fa-flip me-2" style="color: #ffffff;"></i>Day 2</h4>
+                    </div>
+                    <br>
+                    <h4 class="text-primary">Sydney</h4>
+                    <p class="mb-4" style="text-align: justify;">
+                        The day begins with a soak in Sydney's pleasant weather. We head to Sydney's most exciting location, Darling Harbour, which is a splendid waterside location at the heart of Sydney, reserved only for pedestrians. Here we visit the Sydney Sea Life Aquarium, wherein you can get up close with sharks, rays, turtles, jellyfish, and much other exotic underwater life. Later, we visit the WILD LIFE Sydney Zoo. Australia is home to some of the world’s most unique and fascinating animals, and they’re all here!!! Walk through the iconic Australian habitats and encounter some of the rare animals that call Australia their home. We then visit the Sydney Opera House, a UNESCO World Heritage Site and one of the world's most iconic landmarks with a unique shape. Get to know this iconic building in a better way as you take a guided tour inside, walk through its every aspect and marvel at the vaulted ceilings. We see the Sydney Harbour Bridge, one of the largest steel arch bridges, and The Rocks, one of the oldest areas of the city, known for its narrow lanes, colonial buildings, and sandstone churches. In the evening, we embark on the Sydney Harbour Cruise. Let’s make our way across the harbour on board this spectacular cruise and marvel at the amazing vistas of Sydney’s skyline and Harbour Bridge.
+                    </p>
+
+                    <div class="col-sm-6">
+                        <h4 class="mb-0 text-light"><i class="fa-solid fa-location-dot fa-flip me-2" style="color: #ffffff;"></i>Day 3</h4>
+                    </div>
+                    <br>
+                    <h4 class="text-primary">Sydney – Cairns (1 Night)</h4>
+                    <p class="mb-4" style="text-align: justify;">
+                        Today we fly to Cairns – a paradise city in Queensland where the Rainforest meets the Reefs. Upon arrival we proceed to Kuranda Rainforest – world’s oldest living tropical Rainforest. Here we enjoy 7.5 km long scenic ride in Sky Rail Rainforest Cableway running above the Barron Gorge National Park full of lush green, rugged rainforest-clad mountains, gorges and tumbling waterfalls.
+                    </p>
+
+                    <div class="col-sm-6">
+                        <h4 class="mb-0 text-light"><i class="fa-solid fa-location-dot fa-flip me-2" style="color: #ffffff;"></i>Day 4</h4>
+                    </div>
+                    <br>
+                    <h4 class="text-primary">Cairns – Great Barrier Reef – Brisbane (2 Nights)</h4>
+                    <p class="mb-4" style="text-align: justify;">
+                        Today we have full day excursion to The Great Barrier Reef – one of the planet's most extraordinary natural wonders with 2300 km long coral reef system in Coral Sea, comprising of thousands of reefs and hundreds of islands made of soft and hard corals, is the only living organism that can be spotted from space. We take a catamaran to one of the islands of Great Barrier Reef and experience the world of colourful corals, fish and marine life through a Glass bottom boat or a Semi-Submersible. You also get a chance to enjoy various adventure water sport activities like Scuba do, Scuba diving, Snorkelling etc. on your own. Later we fly to Brisbane – capital of Queensland, is a large city on the Brisbane River.
+                    </p>
+
+                    <div class="col-sm-6">
+                        <h4 class="mb-0 text-light"><i class="fa-solid fa-location-dot fa-flip me-2" style="color: #ffffff;"></i>Day 5</h4>
+                    </div>
+                    <br>
+                    <h4 class="text-primary">Brisbane – Gold Coast – Brisbane</h4>
+                    <p class="mb-4" style="text-align: justify;">
+                        Brisbane – Gold Coast – Brisbane
+                        Today we proceed to Gold Coast and explore Currumbin Wildlife Sanctuary – a heritage listed sanctuary and a home to the world’s largest collection of Australian native animals and birds, especially for huge flocks of wild Rainbow Lorikeet birds, Koalas and Kangaroos.
+                        Later we proceed to Warner Bros. Movie World and step into a world of imagination, action, drama, and all things cinematic. Experience first-class rides and action-packed shows in a place where your favourite movies come to life. Get on adrenaline-pumping rides like Green Lantern Roller Coaster – themed after DC comics Character, Batwing Spaceshot – which shoots riders up and then back down based on Batman fantasy, Superman Escape – hydraulic launch high speed roller coaster ride and Wild West Falls – adventure ride that features geysers, mine shafts, a ghost town and an inevitable drop and at the end we enjoy ‘The Lego movie 4D experience’ show.
+                        In the evening, we have free time to stroll around Gold Coast’s famous Surfer’s Paradise Beach front area. We then return back to Brisbane.
+                    </p>
+
+                    <div class="col-sm-6">
+                        <h4 class="mb-0 text-light"><i class="fa-solid fa-location-dot fa-flip me-2" style="color: #ffffff;"></i>Day 6</h4>
+                    </div>
+                    <br>
+                    <h4 class="text-primary">Brisbane – Melbourne (2 Nights)</h4>
+                    <p class="mb-4" style="text-align: justify;">
+                        Today we fly to Melbourne it’s one of the most liveable cities in the world. The city’s architecture evokes the Victorian Era and has a European feel to it, which is sure to both rejuvenate and amaze you at the same time. Upon arrival we ride the historic City Circle Tram and get around Central Melbourne, seeing Docklands, the City Museum, the Princess Theatre, etc. We end our City Circle Tram ride at Federation Square, a bustling city square with an iconic structure. We then pass by The Atrium, a magnificent galleria of glass and steel and a peerless indoor venue for exhibitions, artistic installations, showcases, and markets. With lovely fountains and sound/light shows.
+                    </p>
+
+                    <div class="col-sm-6">
+                        <h4 class="mb-0 text-light"><i class="fa-solid fa-location-dot fa-flip me-2" style="color: #ffffff;"></i>Day 7</h4>
+                    </div>
+                    <br>
+                    <h4 class="text-primary">Melbourne</h4>
+                    <p class="mb-4" style="text-align: justify;">
+                        Time flies when we are having fun. Here we are in Melbourne, the city that will enchant you with its laidback lifestyle. We see St. Patrick Cathedral, Town Hall, and Parliament House, followed by a visit to the Fitzroy Garden, which is a Victorian-style garden dotted with ornamental lakes, pavilions, fountains, sculptures, and a huge number of trees. Stroll through the shaded promenades. The garden’s most appealing attraction is the actual 18th-century cottage where Australia’s discoverer, Captain James Cook, spent his childhood — Captain Cook’s Cottage. Whether you are a cricket fan or not, when in Melbourne you can’t resist visiting the historic and iconic Melbourne Cricket Ground. This 160-year-old stadium has been witness to so many records and celebrations. A behind-the-scenes tour of the MCG reveals more than 150 years of Australia’s sporting history. Explore the stadium's inner sanctum and walk on the divine turf. In the evening, we proceed to Philip Island, home to the Fairy Penguins, the smallest of the penguin species, along with captivating coastlines and unique wildlife. See the little penguins in their natural habitat. Upon arrival, we witness the world famous Penguin Parade, where a large number of Fairy Penguins march up to their burrows. Experience the exciting and thrilling moments as you spot the first little penguins emerging from the sea and waddling along the Philip Island beach at dusk.
+                    </p>
+
+                    <div class="col-sm-6">
+                        <h4 class="mb-0 text-light"><i class="fa-solid fa-location-dot fa-flip me-2" style="color: #ffffff;"></i>Day 8</h4>
+                    </div>
+                    <br>
+                    <h4 class="text-primary">Melbourne – The Great Ocean Road – Departure from Melbourne</h4>
+                    <p class="mb-4" style="text-align: justify;">
+                        Today is the day we will cherish forever. We drive along one of the world’s most beautiful, stunning, and naturally maintained destinations – The Great Ocean Road. We get a unique opportunity to see the 12 Apostles, Shipwreck Coast, and Port Campbell National Park with a breath-taking helicopter ride, making us enjoy the rugged landscapes and endless sea views. Seeing these incredible limestone stacks from the ground level is a sight to behold, and you even get a unique perspective as you see them from the sky above.
+                        It's time now to say goodbye!
+                        Let's stay in touch with each other through email, phone, WhatsApp, Facebook, and Instagram and meet again on yet another memorable Veena World tour. We'll see you all soon!!!
+                        Mumbai to Mumbai Tour guests will proceed to the Sydney Airport as per the scheduled group flight departure time and start their journey back home.
+                    </p>
+
+
+                    
+                    <!-- <p class="mb-4" style="text-align: justify; font-size: small;">
+                        <p style="text-decoration: underline; font-style: italic;">Please Note:</p> 
+                        <p style="font-style: italic; font-size: small;">Rohtang pass is 51 kms away from Manali. This Pass is not accessible for almost 8 months in a year, as it is covered by snow. We generally visit the snow point on Rohtang road, which has been permitted by the Border Security Force.</p> 
+                    </p>
+
+                    <p class="mb-4" style="text-align: justify; font-size: small;">
+                        <p style="text-decoration: underline; font-style: italic;">Also Note:</p> 
+                        <p style="font-style: italic; font-size: small;">Snow clothes, jackets and gum boots are available on rent in the shops located on Rohtang Road, you can rent it at an additional cost if needed.</p> 
+                    </p> -->
+
+
+                    <!-- <div class="row gy-2 gx-4 mb-4">
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>First Class Flights</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Handpicked Hotels</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>5 Star Accommodations</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Latest Model Vehicles</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>150 Premium City Tours</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>24/7 Service</p>
+                        </div>
+                    </div> -->
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="" style="border-radius: 15px;">Experience in VR</a>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="../JetSetWiz - Travel Planner/fullMaps/australia_fullMap.html" target="_blank" style="border-radius: 15px;">View FullScreen Map</a>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    <!-- About End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Company</h4>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Privacy Policy</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">FAQs & Help</a>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Team</h4>
+                    <p class="mb-2">Spandan Marathe</p>
+                    <p class="mb-2">Karan Shardul</p>
+                    <p class="mb-2">Sameer Patil</p>
+                    <p class="mb-2">Rohit Kuvar</p>
+                    
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Gallery</h4>
+                    <div class="row g-2 pt-2">
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/package-1.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/package-malay.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/package-indo.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/destination-2.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/travel-home.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/about-img.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Join Us </h4>
+                    
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="https://freewebsitecode.com">JetSetWiz</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="">Home</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FQAs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script>
+        var map = L.map('map').setView([0, 0], 3);
+
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            }).addTo(map);
+
+            L.Routing.control({
+            waypoints: [
+                L.latLng(19.092559825245953, 72.87842357587448),
+                L.latLng(-33.86719235160944, 151.20795043475485)
+            ]
+            }).addTo(map).hide();
+
+            L.Routing.control({
+            waypoints: [
+                L.latLng(-33.86719235160944, 151.20795043475485),
+                L.latLng(-16.91369950632091, 145.76663541114772)
+            ]
+            }).addTo(map).hide();
+
+            L.Routing.control({
+            waypoints: [
+                L.latLng(-16.91369950632091, 145.76663541114772),
+                L.latLng(-16.89969296630505, 145.8666396333152)
+            ]
+            }).addTo(map).hide();
+
+            L.Routing.control({
+            waypoints: [
+                L.latLng(-16.89969296630505, 145.8666396333152),
+                L.latLng(-27.467082760313374, 153.01922879522363)
+            ]
+            }).addTo(map).hide();
+
+            L.Routing.control({
+            waypoints: [
+                L.latLng(-27.467082760313374, 153.01922879522363),
+                L.latLng(-28.01204025104973, 153.4146201739322)
+            ]
+            }).addTo(map).hide();
+
+            L.Routing.control({
+            waypoints: [
+                L.latLng(-28.01204025104973, 153.4146201739322),
+                L.latLng(-37.69140188804103, 144.90856630728152)
+            ]
+            }).addTo(map).hide();
+
+            L.Routing.control({
+            waypoints: [
+                L.latLng(-37.69140188804103, 144.90856630728152),
+                L.latLng(-38.40813785024538, 144.18988125010014)
+            ]
+            }).addTo(map).hide();
+
+
+
+    </script>
+</body>
+
+</html>

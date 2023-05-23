@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tourist - Travel Agency HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/dce976e4ed.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+    <style>
+        #map {position: relative; top: 0; bottom: 0; left: 0; right: 0; height: 1345px; width: 600px;}
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="" class="navbar-brand p-0">
+                <h1 class="text-primary m-0"><i class="fa fa-map-marker-alt me-3"></i>JetSetWiz</h1>
+                <!-- <img src="img/logo.png" alt="Logo"> -->
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="service.html" class="nav-item nav-link">Services</a>
+                    <a href="itinerary.html" class="nav-item nav-link active">Itinerary</a>
+                    <a href="package.html" class="nav-item nav-link">Packages</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="destination.html" class="dropdown-item">Destination</a>
+                            <a href="booking.html" class="dropdown-item">Booking</a>
+                            <a href="team.html" class="dropdown-item">Travel Guides</a>
+                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            <a href="404.html" class="dropdown-item">404 Page</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
+            </div>
+        </nav>
+
+        <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+            <div class="container py-5">
+                <div class="row justify-content-center py-5">
+                    <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+                        <h1 class="display-3 text-white animated slideInDown">Visit Rajasthan</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Destinations</a></li>
+                                <li class="breadcrumb-item"><a href="#">India</a></li>
+                                <li class="breadcrumb-item text-white active" aria-current="page">Rajasthan Tour</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar & Hero End -->
+
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <div id="map"></div>
+
+                        <div class="weather">
+                            <div id="ww_de3e297b2d45e" v='1.3' loc='id' a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":["wl2183"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>Weather Data Source: <a href="https://weatherlabs.in/हिंदी/जोधपुर_का_मौसम/10_दिनों/" id="ww_de3e297b2d45e_u" target="_blank">10 दिनों के लिए तापमान</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_de3e297b2d45e"></script>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h6 class="section-title text-start text-primary pe-3" style="background-color: #15151f;">Travel Itinerary</h6>
+                    <h1 class="mb-4 text-light">You're in <span class="text-primary">Rajasthan</span></h1><br>
+                    <div class="col-sm-6">
+                        <h4 class="mb-0 text-light"><i class="fa-solid fa-location-dot fa-flip me-2" style="color: #ffffff;"></i>Day 1</h4>
+                    </div>
+                    <br>
+                    <h4 class="text-primary">Jodhpur (2 Nights)</h4>
+                    <p class="mb-4" style="text-align: justify;">
+                        Tour guests will arrive at Jodhpur Airport as per their scheduled flight. Upon arrival they will meet our tour manager at the airport and proceed to Jodhpur city – famed as Blue City of India featuring many palaces, forts and temples set in the stark landscapes of Thar Desert. In the evening we visit Bishnoi village – here we get a glimpse of a rich cultural life of Marwar. Here we enjoy village safari and dinner with Bishnoi Villagers.
+                    </p>
+
+                    <div class="col-sm-6">
+                        <h4 class="mb-0 text-light"><i class="fa-solid fa-location-dot fa-flip me-2" style="color: #ffffff;"></i>Day 2</h4>
+                    </div>
+                    <br>
+                    <h4 class="text-primary">Jodhpur</h4>
+                    <p class="mb-4" style="text-align: justify;">
+                        Today we explore Ummaid Bhavan Palace Musuem – almost 75 years old architectural marvel now turned into museum showcasing artistic murals, opulent miniature paintings, vintage clocks and unusual household paraphernalia. In the afternoon, we visit the Mehrangarh Fort – which stands four hundred feet above the skyline of Jodhpur. The fort is burnished in Red Sandstone and its colossal structure is surely impressive in all manner. Here we will see Moti Mahal – largest room in fort whose ceiling is decorated with Gold Leaves, Sea Shells and Mirrors, Phool Mahal – Pleasure dome of the Maharajas, Sheesh Mahal – Decorative mirror palace with brightly coloured paintings, Silah Khana – place where weapons were stored, Daulat Khana – treasure vault and Rang Mahal. Later we visit Jaswant Thada – a royal cenotaph built in the white marble also known as Taj Mahal of Marwar. We then see the Sanganeri Block Prints Demonstration – a hand-block printing technique originating from Sanganer. In the evening we have free time for shopping.
+                    </p>
+
+                    <div class="col-sm-6">
+                        <h4 class="mb-0 text-light"><i class="fa-solid fa-location-dot fa-flip me-2" style="color: #ffffff;"></i>Day 3</h4>
+                    </div>
+                    <br>
+                    <h4 class="text-primary">Jodhpur – Jaisalmer (2 Nights)</h4>
+                    <p class="mb-4" style="text-align: justify;">
+                        Today we proceed to Jaisalmer – Golden City of desert famed for its yellow sandstone architecture. Upon arrival we take blissful boat ride in Gadisar Lake surrounded by many temples, shrines and Ghats. Later we enjoy delightful puppet show – a preserved ancient folk art of Rajasthan.
+                    </p>
+                    
+                    <div class="col-sm-6">
+                        <h4 class="mb-0 text-light"><i class="fa-solid fa-location-dot fa-flip me-2" style="color: #ffffff;"></i>Day 4</h4>
+                    </div>
+                    <br>
+                    <h4 class="text-primary">Jaisalmer</h4>
+                    <p class="mb-4" style="text-align: justify;">
+                        Today we explore Jaisalmer City. We visit Golden Fort – a UNESCO world heritage site and one of the very few living forts in the world, as nearly one fourth the population of the city still resides within the Fort followed by visit to Jain Mandir – craved in yellow sandstones dedicated to Jain hermits known as Tirthankars. Later we visit Patwon ki Haweli Museum – Palace built in early 1800s, now a museum featuring intricate carvings, furniture and artwork and see Nathmalji ki haveli. It’s time to visit Kuldhara – an abandoned village believed to be cursed. We then proceed to famous Sam Sand Dunes. Upon arrival we experience thrilling Dune Bashing over the golden sands of Jaisalmer. In the evening we get an opportunity to witness the spectacular beauty of sandy terrain by taking joyful Camel Ride and view Red Orange colour splash of sunset on horizon of desert. We then return back to Jaisalmer hotel for overnight stay.
+                    </p>
+                <!--   note column open 
+
+                    <p class="mb-4" style="text-align: justify; font-size: small;">
+                        <p style="text-decoration: underline; font-style: italic;">Please Note:</p> 
+                        <p style="font-style: italic; font-size: small;">Note: Foreigners and NRI's are restricted to visit Baba Harbhajan Singh Mandir as per Government regulations.</p> 
+                    </p>
+
+                    <p class="mb-4" style="text-align: justify; font-size: small;">
+                        <p style="text-decoration: underline; font-style: italic;">Please Note:</p> 
+                        <p style="font-style: italic; font-size: small;">Rohtang pass is 51 kms away from Manali. This Pass is not accessible for almost 8 months in a year, as it is covered by snow. We generally visit the snow point on Rohtang road, which has been permitted by the Border Security Force.</p> 
+                    </p>
+                
+                    <p class="mb-4" style="text-align: justify; font-size: small;">
+                        <p style="text-decoration: underline; font-style: italic;">Also Note:</p> 
+                        <p style="font-style: italic; font-size: small;">Snow clothes, jackets and gum boots are available on rent in the shops located on Rohtang Road, you can rent it at an additional cost if needed.</p> 
+                    </p>
+                note column close -->
+
+                <div class="col-sm-6">
+                    <h4 class="mb-0 text-light"><i class="fa-solid fa-location-dot fa-flip me-2" style="color: #ffffff;"></i>Day 5</h4>
+                </div>
+                <br>
+                <h4 class="text-primary">Jaisalmer – Bikaner (1 Night)</h4>
+                <p class="mb-4" style="text-align: justify;">
+                    Today we proceed to Bikaner – former capital of princely state of Bikaner and known worldwide for its savoury snacks Bikaneri Bhujia. En route we visit the Jaisalmer War Museum – established in the military station in order to honour the soldiers of the 'Battle of Longewala' that was fought in the year 1971. It embraces the bravery and sacrifices of the Indian Army. Upon arrival we visit Asia's biggest Camel Research Farm to get up close with the different camel breeds and baby camels.
+                </p>
+
+                <div class="col-sm-6">
+                    <h4 class="mb-0 text-light"><i class="fa-solid fa-location-dot fa-flip me-2" style="color: #ffffff;"></i>Day 6</h4>
+                </div>
+                <br>
+                <h4 class="text-primary">Bikaner – Mandawa (2 Nights)</h4>
+                <p class="mb-4" style="text-align: justify;">
+                    Today morning we visit Karani Mata Temple – a Hindu temple dedicated to Karani Mata and famous for the approximately 25,000 black rats that live and are revered in the temple. Later we explore the Junagarh Fort – an impressive fort standing with all its regal glory as an epitome of architectural brilliance. The dazzling and exquisite structures of this fort, balconies, gardens and kiosks etc. depicts a composite architectural style influenced by cultural differences of Indian and foreign inspirations. Here we see Anup Mahal, Gaj Mandir, Sheesh Mahal, and Prachina Museum and Sadual Museum. We proceed to Mandawa – a quaint little town in a heart of Shekhavati region popularly known as Open Air Art Gallery of Rajasthan. The town is replete with paved Archways, Magnificent Havelis and Fortresses.
+                </p>
+
+                <div class="col-sm-6">
+                    <h4 class="mb-0 text-light"><i class="fa-solid fa-location-dot fa-flip me-2" style="color: #ffffff;"></i>Day 7</h4>
+                </div>
+                <br>
+                <h4 class="text-primary">Mandawa</h4>
+                <p class="mb-4" style="text-align: justify;">
+                    Today we visit Mandawa fort, decorated with paintings of Lord Krishna and also adorned with artistic carvings and amazing mirror work. We then have free time to relax and explore the surroundings.
+                </p>
+
+                <div class="col-sm-6">
+                    <h4 class="mb-0 text-light"><i class="fa-solid fa-location-dot fa-flip me-2" style="color: #ffffff;"></i>Day 7</h4>
+                </div>
+                <br>
+                <h4 class="text-primary">Mandawa – Jaipur – Departure to hometown</h4>
+                <p class="mb-4" style="text-align: justify;">
+                    Today we proceed to Jaipur.
+                    It's time now to say goodbye to our travel companions. Let's stay in touch with each other through email, phone, WhatsApp, Facebook, Instagram and meet again on yet another memorable tour. See you all!!  
+                    Tour Guests will proceed to will proceed to Jaipur airport as per their schedule flight and start their return journey back home.
+                </p>
+
+                    
+
+                    <!-- <div class="row gy-2 gx-4 mb-4">
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>First Class Flights</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Handpicked Hotels</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>5 Star Accommodations</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Latest Model Vehicles</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>150 Premium City Tours</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>24/7 Service</p>
+                        </div>
+                    </div> -->
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="" style="border-radius: 15px;">Experience in VR</a>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="../JetSetWiz - Travel Planner/fullMaps/rajasthan_fullMap.html" style="border-radius: 15px;">View FullScreen Map</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Company</h4>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Privacy Policy</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">FAQs & Help</a>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Team</h4>
+                    <p class="mb-2">Spandan Marathe</p>
+                    <p class="mb-2">Karan Shardul</p>
+                    <p class="mb-2">Sameer Patil</p>
+                    <p class="mb-2">Rohit Kuvar</p>
+                    
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Gallery</h4>
+                    <div class="row g-2 pt-2">
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/package-1.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/package-malay.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/package-indo.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/destination-2.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/travel-home.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/about-img.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Join Us </h4>
+                    
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="https://freewebsitecode.com">JetSetWiz</a>, All Right Reserved.
+                    </div>
+                    
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="">Home</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FQAs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script>
+        var map = L.map('map').setView([0, 0], 3);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            }).addTo(map);
+
+        L.Routing.control({
+            waypoints: [
+                L.latLng(26.770908305099812, 73.80820012665345),
+                L.latLng( 26.240463912153075, 73.02700765796493)
+            ]
+            }).addTo(map).hide();
+
+        L.Routing.control({
+            waypoints: [
+                L.latLng(26.240463912153075, 73.02700765796493),
+                L.latLng(26.916105603403405, 70.91199266965324)
+            ]
+            }).addTo(map).hide();
+
+        L.Routing.control({
+            waypoints: [
+                L.latLng(26.916105603403405, 70.91199266965324),
+                L.latLng(28.022462566715383, 73.30992658593632)
+            ]
+            }).addTo(map).hide();
+
+            L.Routing.control({
+            waypoints: [
+                L.latLng(28.022462566715383, 73.30992658593632),
+                L.latLng(28.049437962251858, 75.14827577290396)
+            ]
+            }).addTo(map).hide();
+
+            L.Routing.control({
+            waypoints: [
+                L.latLng(28.049437962251858, 75.14827577290396),
+                L.latLng(26.927977073388163, 75.77337667771637)
+            ]
+            }).addTo(map).hide();
+
+    </script>
+</body>
+
+</html>

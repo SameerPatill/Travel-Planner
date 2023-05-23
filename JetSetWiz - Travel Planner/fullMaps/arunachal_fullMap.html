@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arunachal Pradesh Tour Route</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    <style>
+        #map {position: absolute; top: 0; bottom: 0; left: 0; right: 0;}
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script>
+        var map = L.map('map').setView([10.1632, 76.6413], 8);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            }).addTo(map);
+
+        L.Routing.control({
+            waypoints: [
+                L.latLng(28.500452097715126, 95.19055425323454),
+                L.latLng(26.11398045187936, 91.70080782410034)
+            ]
+            }).addTo(map);
+
+        L.Routing.control({
+            waypoints: [
+                L.latLng(26.11398045187936, 91.70080782410034),
+                L.latLng(26.654265828581632, 92.79114214739081)
+            ]
+            }).addTo(map);
+
+        L.Routing.control({
+            waypoints: [
+                L.latLng(26.654265828581632, 92.79114214739081),
+                L.latLng(27.358818287850287, 92.24106240116473)
+            ]
+            }).addTo(map);
+
+            L.Routing.control({
+            waypoints: [
+                L.latLng(27.358818287850287, 92.24106240116473),
+                L.latLng(27.587363755646862, 91.86380715797242)
+            ]
+            }).addTo(map);
+
+            L.Routing.control({
+            waypoints: [
+                L.latLng(27.587363755646862, 91.86380715797242),
+                L.latLng(27.587363755646862, 91.86380715797242)
+            ]
+            }).addTo(map);
+
+    </script>
+</body>
+</html>

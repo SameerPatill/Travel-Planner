@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>JetSetWiz</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/dce976e4ed.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+    <style>
+        #map {position: relative; top: 0; bottom: 0; left: 0; right: 0; height: 1500px; width: 600px;}
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Location, City, Country</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+012 345 6789</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>info@example.com</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-twitter fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-instagram fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href=""><i class="fab fa-youtube fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="" class="navbar-brand p-0">
+                <h1 class="text-primary m-0"><i class="fa fa-map-marker-alt me-3"></i>JetSetWiz</h1>
+                <!-- <img src="img/logo.png" alt="Logo"> -->
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="service.html" class="nav-item nav-link">Services</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Itinerary</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="manali_shimla-itinerary.html" class="dropdown-item">Manali-Shimla</a>
+                            <a href="sikkim_dargeling-itinerary.html" class="dropdown-item">Sikkim-Dargeling</a>
+                            <a href="andaman_nicobar-itinerary.html" class="dropdown-item">Andaman Itinerary</a>
+                            <a href="leh_ladakh-itinerary.html" class="dropdown-item active">Leh ladakh Itinerary</a>
+                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            <a href="404.html" class="dropdown-item">404 Page</a>
+                            <a href="manali_shimla_tour.html" class="dropdown-item">Shimla-Manali Tour</a>
+                        </div>
+                    </div>
+                    <a href="package.html" class="nav-item nav-link">Packages</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="destination.html" class="dropdown-item">Destination</a>
+                            <a href="booking.html" class="dropdown-item">Booking</a>
+                            <a href="team.html" class="dropdown-item">Travel Guides</a>
+                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            <a href="404.html" class="dropdown-item">404 Page</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
+            </div>
+        </nav>
+
+        <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+            <div class="container py-5">
+                <div class="row justify-content-center py-5">
+                    <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+                        <h1 class="display-3 text-white animated slideInDown">Itinerary</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Itinerary</a></li>
+                                <li class="breadcrumb-item text-white active" aria-current="page">Leh Ladakh Itinerary</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar & Hero End -->
+
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <div id="map"></div>
+                        <div class="weather">
+                            <div id="ww_76e8ad1a62fb5" v='1.3' loc='id' a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":["wl4481"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'><a href="https://weatherwidget.org/uk/" id="ww_76e8ad1a62fb5_u" target="_blank">Безкоштовний HTML погодний інформер на сайт</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_76e8ad1a62fb5"></script>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h6 class="section-title text-start text-primary pe-3" style="background-color: #15151f;">Travel Itinerary</h6>
+                    <h1 class="mb-4 text-light">Welcome to <span class="text-primary">Leh Ladakh</span></h1><br>
+                    <div class="col-sm-6">
+                        <h4 class="mb-0 text-light"><i class="fa-solid fa-location-dot fa-flip me-2" style="color: #ffffff;"></i>Day 1</h4>
+                    </div>
+                    <br>
+                    <h4 class="text-primary">Leh (2 Nights)</h4>
+                    <p class="mb-4" style="text-align: justify;">
+                        Tour Guests will arrive at Leh Airport as per their Scheduled flight. Upon arrival they will meet Veena World tour manager at the airport and proceed to Hotel. Today we have free time for acclimatization. In the evening we enjoy short Meet & Greet session.
+                    </p>
+
+                    <div class="col-sm-6">
+                        <h4 class="mb-0 text-light"><i class="fa-solid fa-location-dot fa-flip me-2" style="color: #ffffff;"></i>Day 2</h4>
+                    </div>
+                    <br>
+                    <h4 class="text-primary">Leh</h4>
+                    <p class="mb-4" style="text-align: justify;">
+                        Today we visit Shey Palace – used to be the summer retreat of the royal family of Ladakh, Rancho School - also known as Druk White Lotus school, Hemis Gompa – a Himalayan Buddhist monastery which is believed to be the wealthiest and the biggest monastery in Leh followed by a Photo stop at Thiksey monastery. Further we witness a Sindhu Darshan - one of the longest rivers in Asia, Hall of Fame War Museum – a museum constructed by the Indian Army in memory of the brave Indian soldiers who laid down their lives defending the motherland in the Indo-Pak wars. Later we have free time for shopping.
+
+                    </p>
+
+                    <div class="col-sm-6">
+                        <h4 class="mb-0 text-light"><i class="fa-solid fa-location-dot fa-flip me-2" style="color: #ffffff;"></i>Day 3</h4>
+                    </div>
+                    <br>
+                    <h4 class="text-primary">Leh – Khardung La Pass – Nubra Valley (1 Night)</h4>
+                    <p class="mb-4" style="text-align: justify;">
+                        Today we proceed to Nubra Valley via Khardung La - the world’s highest motorable pass. Nubra valley - the Shyok River meets the Siachen River to form this large valley separating the Ladakh and Karakoram ranges. Upon arrival we visit Maitreya Buddha – Perched on top of a monastery, it is the statue of Jampa Buddha, noted for its intricate carvings, brilliant craftsmanship and vivid colours. Later we visit Hunder Village and Cold desert - the only place in India where twin humped camels are found.
+
+                    </p>
+
+                    <div class="col-sm-6">
+                        <h4 class="mb-0 text-light"><i class="fa-solid fa-location-dot fa-flip me-2" style="color: #ffffff;"></i>Day 4</h4>
+                    </div>
+                    <br>
+                    <h4 class="text-primary">Nubra Valley – Pangong Tso (1 Night)</h4>
+                    <p class="mb-4" style="text-align: justify;">
+                        Today we proceed to Pangong Tso, also known as Pangong Lake - one of the world's highest saltwater lakes. The most notable feature of this lake are its ever-changing hues. The lake acts as an important breeding ground for a large variety of migratory birds like Brahmani Ducks, Rare black necked cranes and Seagulls.
+                    </p>
+                <div class="col-sm-6">
+                    <h4 class="mb-0 text-light"><i class="fa-solid fa-location-dot fa-flip me-2" style="color: #ffffff;"></i>Day 5</h4>
+                </div>
+                <br>
+                <h4 class="text-primary">Pangong Tso – Leh (2 Nights)</h4>
+                <p class="mb-4" style="text-align: justify;">
+                    Today we Proceed to Leh via Changla pass, one of the highest motor-able road in the world. The name Changla pass literally means "Northern Pass" (Chang means north and La means Pass).
+                </p>
+
+                <div class="col-sm-6">
+                    <h4 class="mb-0 text-light"><i class="fa-solid fa-location-dot fa-flip me-2" style="color: #ffffff;"></i>Day 6</h4>
+                </div>
+                <br>
+                <h4 class="text-primary">Leh</h4>
+                <p class="mb-4" style="text-align: justify;">
+                    Today we visit Patthar Sahib Gurudwara - a beautiful Gurudwara sahib constructed in the memory of Guru Nanak, Magnetic Hill – also known as Gravity Hill where vehicles defy the force of gravity, Sangam of the rivers Indus & Zanskar – two of Himalaya's great rivers; Zanskar and Indus merge to form a spectacular view, Shanti Stupa – built by the Japanese monks to promote world peace In the evening, we enjoy the Folk dance show.
+                </p>
+
+                <div class="col-sm-6">
+                    <h4 class="mb-0 text-light"><i class="fa-solid fa-location-dot fa-flip me-2" style="color: #ffffff;"></i>Day 7</h4>
+                </div>
+                <br>
+                <h4 class="text-primary">Leh – Departure to Hometown</h4>
+                <p class="mb-4" style="text-align: justify;">
+                    It’s time now to say goodbye to our travel companions. Let’s stay in touch with each other through email, phone, WhatsApp, Facebook, Instagram and meet again on yet another memorable tour. See you all!! Tour Guests will proceed to Leh airport as per their schedule flight and start their return journey back home.
+
+                </p>
+                <a class="btn btn-primary py-3 px-5 mt-2" href="sikkim-dargeling_vr.html" style="border-radius: 15px;">Detailed Info</a>
+                <a class="btn btn-primary py-3 px-5 mt-2" href="leh_ladakh-fullmap.html" style="border-radius: 15px;">View Full Map</a>               
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Company</h4>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Privacy Policy</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">FAQs & Help</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Team</h4>
+                    <p class="mb-2">Spandan Marathe</p>
+                    <p class="mb-2">Karan Shardul</p>
+                    <p class="mb-2">Sameer Patil</p>
+                    <p class="mb-2">Rohit Kuvar</p>
+                    
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Gallery</h4>
+                    <div class="row g-2 pt-2">
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/package-1.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/package-malay.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/package-indo.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/destination-2.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/travel-home.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/about-img.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Join Us </h4>
+                    
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="https://freewebsitecode.com">JetSetWiz</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="">Home</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FQAs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script>
+        var map = L.map('map').setView([0, 0], 4);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+        L.Routing.control({
+            waypoints: [
+                L.latLng(34.153186573295685, 77.57703701347566),
+                L.latLng(34.27893812510249, 77.6039045086767)
+            ]
+            }).addTo(map).hide();
+
+        L.Routing.control({
+            waypoints: [
+                L.latLng(34.27893812510249, 77.6039045086767),
+                L.latLng(34.68644690442512, 77.56800682846564)
+            ]
+            }).addTo(map).hide();
+
+        L.Routing.control({
+            waypoints: [
+                L.latLng(34.68644690442512, 77.56800682846564),
+                L.latLng(33.75086585641193, 78.67134788146919)
+            ]
+            }).addTo(map).hide();
+
+    </script>
+</body>
+
+</html>
