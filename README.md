@@ -1,3 +1,3 @@
 # JetSetWiz - Travel Planner
 
-### Visit the Website - https://jetsetwiz.web.app
+### Visit the Website - jetsetwiz.web.app
