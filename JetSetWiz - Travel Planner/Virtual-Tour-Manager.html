@@ -30,6 +30,9 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <!-- Font Awesome Kit Link -->
+    <script src="https://kit.fontawesome.com/dce976e4ed.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -45,8 +48,7 @@
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
             <a href="" class="navbar-brand p-0">
-                <h1 class="text-primary m-0"><i class="fa fa-map-marker-alt me-3"></i>JetSetWiz</h1>
-                <!-- <img src="img/logo.png" alt="Logo"> -->
+                <h1 class="text-primary m-0"><i class="fa-sharp fa-solid fa-hat-wizard fa-lg fa-flip" style="color: #108acb;"></i>       JetSetWiz</h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
@@ -56,22 +58,71 @@
                     <a href="index.html" class="nav-item nav-link">Home</a>
                     <a href="about.html" class="nav-item nav-link">About</a>
                     <a href="service.html" class="nav-item nav-link">Services</a>
-                    <a href="package.html" class="nav-item nav-link">Packages</a>
+                    <ul class="navbar-nav">
+                      <li class="nav-item dropdown">
+                        <a href="service.html" class="nav-item nav-link dropdown-toggle">Destinations</a>
+                        <ul class="dropdown-menu dropdown-menu">
+                            <li class="nav-item dropend">
+                                <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
+                                  India
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu">
+                                  <li><a class="dropdown-item" href=" itinerary_ladakh.html">Leh - Ladakh</a></li>
+                                  <li><a class="dropdown-item" href=" itinerary_sikkim.html">Sikkim & Darjeeling</a></li>
+                                  <li><a class="dropdown-item" href=" itinerary_andaman.html">Andaman & Nicobar Islands</a></li>
+                                  <li><a class="dropdown-item" href=" itinerary_manali.html">Shimla & Manali</a></li>
+                                  <li><a class="dropdown-item" href=" itinerary_kashmir.html">Jammu & Kashmir</a></li>
+                                  <li><a class="dropdown-item" href=" itinerary_kerala.html">Kerala</a></li>
+                                  <li><a class="dropdown-item" href=" itinerary_meghalaya.html">Meghalaya</a></li>
+                                  <li><a class="dropdown-item" href=" itinerary_ooty.html">Ooty</a></li>
+                                  <li><a class="dropdown-item" href=" itinerary_arunachal.html">Arunachal Pradesh</a></li>
+                                  <li><a class="dropdown-item" href=" itinerary_rajasthan.html">Rajasthan</a></li>
+                                </ul>
+                              </li>
+                          <li class="nav-item dropend">
+                            <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
+                              International
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu">
+                              <li><a class="dropdown-item" href=" itinerary_germany.html">Germany</a></li>
+                              <li><a class="dropdown-item" href=" itinerary_dubai.html">Dubai</a></li>
+                              <li><a class="dropdown-item" href=" itinerary_maldives.html">Maldives</a></li>
+                              <li><a class="dropdown-item" href=" itinerary_australia.html">Australia</a></li>
+                              <li><a class="dropdown-item" href=" itinerary_singapore.html">Singapore</a></li>
+                              <li><a class="dropdown-item" href=" itinerary_thailand.html">Thailand</a></li>
+                              <li><a class="dropdown-item" href=" itinerary_czech-republic.html">Czech - Republic</a></li>
+                              <li><a class="dropdown-item" href=" itinerary_england.html">England</a></li>
+                              <li><a class="dropdown-item" href=" itinerary_bhutan.html">Bhutan</a></li>
+                              <li><a class="dropdown-item" href=" itinerary_mauritius.html">Mauritius</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Recommendations</a>
                         <div class="dropdown-menu m-0">
-                            <a href="destination.html" class="dropdown-item">Destination</a>
-                            <a href="booking.html" class="dropdown-item">Booking</a>
-                            <a href="team.html" class="dropdown-item active">Virtual Tour Manager</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                            <a href="404.html" class="dropdown-item">404 Page</a>
+                            <a href="Virtual-Tour-Manager.html" class="dropdown-item">Season-wise Destinations</a>
+                            <a href="https://jetsetwizhotels.streamlit.app/" class="dropdown-item">Hotels</a>
                         </div>
                     </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+  
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">More</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="Virtual-Tour-Manager.html" class="dropdown-item active">VTM (Virtual Tours)</a>
+                        <a href="forex.html" class="dropdown-item">Forex</a>
+                        <a href="#" class="dropdown-item">Airport Guide</a>
+                        <a href="#" class="dropdown-item">Feedback</a>
+                        <a href="contact.html" class="dropdown-item">Contact</a>
+                        
+                    </div>
                 </div>
-                <a href="" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
+                </div>
             </div>
         </nav>
+  
 
         <div class="container-fluid bg-primary py-5 mb-5 hero-header">
             <div class="container py-5">
@@ -81,7 +132,7 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb justify-content-center">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                                <li class="breadcrumb-item"><a href="#">More</a></li>
                                 <li class="breadcrumb-item text-white active" aria-current="page">VTM</li>
                             </ol>
                         </nav>
@@ -98,8 +149,8 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <a href="../JetSetWiz - Travel Planner/VTM-andaman.html">
-                            <img class="img-fluid position-absolute w-100 h-100" src="../JetSetWiz - Travel Planner/img/destImages/andaman.jpg" alt="" style="object-fit: cover; border-radius: 20px;">
+                        <a href=" VTM-andaman.html">
+                            <img class="img-fluid position-absolute w-100 h-100" src=" img/destImages/andaman.jpg" alt="" style="object-fit: cover; border-radius: 20px;">
                             <div class="text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2"  style="background-color: #15151f;">Andaman & Nicobar</div>
                         </a>
                     </div>
@@ -108,8 +159,8 @@
 
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <a href="../JetSetWiz - Travel Planner/VTM-dubai.html">
-                            <img class="img-fluid position-absolute w-100 h-100" src="../JetSetWiz - Travel Planner/img/destImages/dubai.jpg" alt="" style="object-fit: cover; border-radius: 20px;">
+                        <a href=" VTM-dubai.html">
+                            <img class="img-fluid position-absolute w-100 h-100" src=" img/destImages/dubai.jpg" alt="" style="object-fit: cover; border-radius: 20px;">
                             <div class="text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2"  style="background-color: #15151f;">Dubai</div>
                         </a>
                     </div>
@@ -118,8 +169,8 @@
 
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <a href="../JetSetWiz - Travel Planner/VTM-germany.html">
-                            <img class="img-fluid position-absolute w-100 h-100" src="../JetSetWiz - Travel Planner/img/destImages/germany.jpg" alt="" style="object-fit: cover; border-radius: 20px;">
+                        <a href=" VTM-germany.html">
+                            <img class="img-fluid position-absolute w-100 h-100" src=" img/destImages/germany.jpg" alt="" style="object-fit: cover; border-radius: 20px;">
                             <div class="text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2"  style="background-color: #15151f;">Germany</div>
                         </a>
                     </div>
@@ -128,8 +179,8 @@
 
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <a href="../JetSetWiz - Travel Planner/VTM-kashmir.html">
-                            <img class="img-fluid position-absolute w-100 h-100" src="../JetSetWiz - Travel Planner/img/destImages/kashmir.jpg" alt="" style="object-fit: cover; border-radius: 20px;">
+                        <a href=" VTM-kashmir.html">
+                            <img class="img-fluid position-absolute w-100 h-100" src=" img/destImages/kashmir.jpg" alt="" style="object-fit: cover; border-radius: 20px;">
                             <div class="text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2"  style="background-color: #15151f;">Kashmir</div>
                         </a>
                     </div>
@@ -138,8 +189,8 @@
 
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <a href="../JetSetWiz - Travel Planner/VTM-ladakh.html">
-                            <img class="img-fluid position-absolute w-100 h-100" src="../JetSetWiz - Travel Planner/img/destImages/ladakh.jpg" alt="" style="object-fit: cover; border-radius: 20px;">
+                        <a href=" VTM-ladakh.html">
+                            <img class="img-fluid position-absolute w-100 h-100" src=" img/destImages/ladakh.jpg" alt="" style="object-fit: cover; border-radius: 20px;">
                             <div class="text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2"  style="background-color: #15151f;">Leh - Ladakh</div>
                         </a>
                     </div>
@@ -148,8 +199,8 @@
 
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <a href="../JetSetWiz - Travel Planner/VTM-maldives.html">
-                            <img class="img-fluid position-absolute w-100 h-100" src="../JetSetWiz - Travel Planner/img/destImages/maldives.jpg" alt="" style="object-fit: cover; border-radius: 20px;">
+                        <a href=" VTM-maldives.html">
+                            <img class="img-fluid position-absolute w-100 h-100" src=" img/destImages/maldives.jpg" alt="" style="object-fit: cover; border-radius: 20px;">
                             <div class="text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2"  style="background-color: #15151f;">Maldives</div>
                         </a>
                     </div>
@@ -158,8 +209,8 @@
 
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <a href="../JetSetWiz - Travel Planner/VTM-manali.html">
-                            <img class="img-fluid position-absolute w-100 h-100" src="../JetSetWiz - Travel Planner/img/destImages/manali.jpg" alt="" style="object-fit: cover; border-radius: 20px;">
+                        <a href=" VTM-manali.html">
+                            <img class="img-fluid position-absolute w-100 h-100" src=" img/destImages/manali.jpg" alt="" style="object-fit: cover; border-radius: 20px;">
                             <div class="text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2"  style="background-color: #15151f;">Manali</div>
                         </a>
                     </div>
@@ -168,8 +219,8 @@
 
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <a href="../JetSetWiz - Travel Planner/VTM-sikkim.html">
-                            <img class="img-fluid position-absolute w-100 h-100" src="../JetSetWiz - Travel Planner/img/destImages/sikkim.jpg" alt="" style="object-fit: cover; border-radius: 20px;">
+                        <a href=" VTM-sikkim.html">
+                            <img class="img-fluid position-absolute w-100 h-100" src=" img/destImages/sikkim.jpg" alt="" style="object-fit: cover; border-radius: 20px;">
                             <div class="text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2"  style="background-color: #15151f;">Sikkim & Darjeeling</div>
                         </a>
                     </div>
@@ -190,25 +241,23 @@
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Company</h4>
+                    <h4 class="text-white mb-3">JetSetWiz</h4>
                     <a class="btn btn-link" href="">About Us</a>
                     <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Privacy Policy</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">FAQs & Help</a>
+                    <a class="btn btn-link" href="">VTM</a>
+                    <a class="btn btn-link" href="">Forex</a>
+                    <a class="btn btn-link" href="">Airport Guide</a>
                 </div>
+                
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Contact</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Location, City, Country</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                    <h4 class="text-white mb-3">Team</h4>
+                    <p class="mb-2">Spandan Marathe</p>
+                    <p class="mb-2">Karan Shardul</p>
+                    <p class="mb-2">Sameer Patil</p>
+                    <p class="mb-2">Rohit Kuvar</p>
+                    
                 </div>
+
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Gallery</h4>
                     <div class="row g-2 pt-2">
@@ -233,8 +282,8 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <h4 class="text-white mb-3">Join Us </h4>
+                    
                     <div class="position-relative mx-auto" style="max-width: 400px;">
                         <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
                         <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
@@ -246,17 +295,15 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="https://freewebsitecode.com">Your Site Name</a>, All Right Reserved.
-
-                        
-                        Designed By <a class="border-bottom" href="https://freewebsitecode.com">Free Website Code</a>
+                        &copy; <a class="border-bottom" href="https://freewebsitecode.com">JetSetWiz</a>, All Right Reserved.
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <div class="footer-menu">
                             <a href="">Home</a>
-                            <a href="">Cookies</a>
-                            <a href="">Help</a>
-                            <a href="">FQAs</a>
+                            <a href="">Destinations</a>
+                            <a href=" Virtual-Tour-Manager.html">VTM</a>
+                            <a href=" forex.html">Forex</a>
+                            <a href=" airport-guide.html">AG</a>
                         </div>
                     </div>
                 </div>

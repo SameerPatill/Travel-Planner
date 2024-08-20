@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "target": "jsw",
+    "public": "JetSetWiz - Travel Planner",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>JetSetWiz</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Font Awesome Kit Link -->
+    <script src="https://kit.fontawesome.com/dce976e4ed.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="" class="navbar-brand p-0">
+                <h1 class="text-primary m-0"><i class="fa-sharp fa-solid fa-hat-wizard fa-lg fa-flip" style="color: #108acb;"></i>       JetSetWiz</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="service.html" class="nav-item nav-link">Services</a>
+                    <ul class="navbar-nav">
+                      <li class="nav-item dropdown">
+                        <a href="service.html" class="nav-item nav-link dropdown-toggle">Destinations</a>
+                        <ul class="dropdown-menu dropdown-menu">
+                            <li class="nav-item dropend">
+                                <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
+                                  India
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu">
+                                  <li><a class="dropdown-item" href=" itinerary_ladakh.html">Leh - Ladakh</a></li>
+                                  <li><a class="dropdown-item" href=" itinerary_sikkim.html">Sikkim & Darjeeling</a></li>
+                                  <li><a class="dropdown-item" href=" itinerary_andaman.html">Andaman & Nicobar Islands</a></li>
+                                  <li><a class="dropdown-item" href=" itinerary_manali.html">Shimla & Manali</a></li>
+                                  <li><a class="dropdown-item" href=" itinerary_kashmir.html">Jammu & Kashmir</a></li>
+                                  <li><a class="dropdown-item" href=" itinerary_kerala.html">Kerala</a></li>
+                                  <li><a class="dropdown-item" href=" itinerary_meghalaya.html">Meghalaya</a></li>
+                                  <li><a class="dropdown-item" href=" itinerary_ooty.html">Ooty</a></li>
+                                  <li><a class="dropdown-item" href=" itinerary_arunachal.html">Arunachal Pradesh</a></li>
+                                  <li><a class="dropdown-item" href=" itinerary_rajasthan.html">Rajasthan</a></li>
+                                </ul>
+                              </li>
+                          <li class="nav-item dropend">
+                            <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
+                              International
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu">
+                              <li><a class="dropdown-item" href=" itinerary_germany.html">Germany</a></li>
+                              <li><a class="dropdown-item" href=" itinerary_dubai.html">Dubai</a></li>
+                              <li><a class="dropdown-item" href=" itinerary_maldives.html">Maldives</a></li>
+                              <li><a class="dropdown-item" href=" itinerary_australia.html">Australia</a></li>
+                              <li><a class="dropdown-item" href=" itinerary_singapore.html">Singapore</a></li>
+                              <li><a class="dropdown-item" href=" itinerary_thailand.html">Thailand</a></li>
+                              <li><a class="dropdown-item" href=" itinerary_czech-republic.html">Czech - Republic</a></li>
+                              <li><a class="dropdown-item" href=" itinerary_england.html">England</a></li>
+                              <li><a class="dropdown-item" href=" itinerary_bhutan.html">Bhutan</a></li>
+                              <li><a class="dropdown-item" href=" itinerary_mauritius.html">Mauritius</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Recommendations</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="Virtual-Tour-Manager.html" class="dropdown-item">Season-wise Destinations</a>
+                            <a href="https://jetsetwizhotels.streamlit.app/" class="dropdown-item">Hotels</a>
+                        </div>
+                    </div>
+  
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">More</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="Virtual-Tour-Manager.html" class="dropdown-item">VTM (Virtual Tours)</a>
+                        <a href="forex.html" class="dropdown-item">Forex</a>
+                        <a href="airport-guide.html" class="dropdown-item active">Airport Guide</a>
+                        <a href="#" class="dropdown-item">Feedback</a>
+                        <a href="contact.html" class="dropdown-item">Contact</a>
+                        
+                    </div>
+                </div>
+                </div>
+            </div>
+        </nav>  
+
+        <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+            <div class="container py-5">
+                <div class="row justify-content-center py-5">
+                    <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+                        <h1 class="display-3 text-white animated slideInDown">Airport Guide</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">More</a></li>
+                                <li class="breadcrumb-item text-white active" aria-current="page">AG</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Virtual Tours Section Starts here -->
+    <!-- 1. Yadavendra Gardens -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-100 h-100" src=" img/checkin.jpg" alt="" style="object-fit: cover; border-radius: 20px;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s" style="padding-top: 110px;">
+                    <h4 class="section-title text-start text-primary pe-3" style="background-color: #15151f;">Step - 1: Check-In</h4>
+                    <br><br>
+                    <p class="mb-4">You can check-in for your flight online, via a mobile app, or at the airport. If you're checking in at the airport, you'll need to go to the check-in desk or kiosk and provide your travel documents (passport, visa, ID, etc.) along with your flight reservation information.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 1. End -->
+
+    <!-- 2. Kullu Valley -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-100 h-100" src=" img/baggage.jpeg" alt="" style="object-fit: cover; border-radius: 20px;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s" style="padding-top: 145px;">
+                    <h4 class="section-title text-start text-primary pe-3" style="background-color: #15151f;">Step - 2: Baggage Drop</h4>
+                    <br><br>
+                    <p class="mb-4">If you have checked-in luggage, you will need to drop it off at the designated baggage drop area.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 2. End -->
+
+    <!-- 3. Rohtang Pass -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-100 h-100" src=" img/security.jpg" alt="" style="object-fit: cover; border-radius: 20px;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s" style="padding-top: 145px;">
+                    <h4 class="section-title text-start text-primary pe-3" style="background-color: #15151f;">Step - 3: Security Check</h4>
+                    <br><br>
+                    <p class="mb-4">Pass through security checkpoint where you will be scanned and screened for any prohibited items.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 3. End -->
+
+    <!-- 4. Hidimba Temple -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-100 h-100" src=" img/immigration.jpg" alt="" style="object-fit: cover; border-radius: 20px;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s" style="padding-top: 145px;">
+                    <h4 class="section-title text-start text-primary pe-3" style="background-color: #15151f;">Step - 4: Immigration Check & Customs</h4>
+                    <br><br>
+                    <p class="mb-4">You may be required to show your travel documents and complete a customs declaration form if applicable.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 4. End -->
+
+    <!-- 5. Sissu Waterfall -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-100 h-100" src=" img/boarding.jpg" alt="" style="object-fit: cover; border-radius: 20px;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s" style="padding-top: 145px;">
+                    <h4 class="section-title text-start text-primary pe-3" style="background-color: #15151f;">Step - 5: Boarding</h4>
+                    <br><br>
+                    <p class="mb-4">You will be called to board the flight when it is ready. Make sure to have your boarding pass and ID ready.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-100 h-100" src=" img/seats.jpg" alt="" style="object-fit: cover; border-radius: 20px;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s" style="padding-top: 145px;">
+                    <h4 class="section-title text-start text-primary pe-3" style="background-color: #15151f;">Step - 6: Find Your Seat</h4>
+                    <br><br>
+                    <p class="mb-4">Locate your seat on the aircraft and stow your carry-on bag in the overhead bin or under the seat in front of you.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 4. End -->
+    <!-- Virtual Tours Section Ends here -->
+        
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">JetSetWiz</h4>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">VTM</a>
+                    <a class="btn btn-link" href="">Forex</a>
+                    <a class="btn btn-link" href="">Airport Guide</a>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Team</h4>
+                    <p class="mb-2">Spandan Marathe</p>
+                    <p class="mb-2">Karan Shardul</p>
+                    <p class="mb-2">Sameer Patil</p>
+                    <p class="mb-2">Rohit Kuvar</p>
+                    
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Gallery</h4>
+                    <div class="row g-2 pt-2">
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/package-1.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/package-malay.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/package-indo.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/destination-2.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/travel-home.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/about-img.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Join Us </h4>
+                    
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="https://freewebsitecode.com">JetSetWiz</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="">Home</a>
+                            <a href="">Destinations</a>
+                            <a href=" Virtual-Tour-Manager.html">VTM</a>
+                            <a href=" forex.html">Forex</a>
+                            <a href=" airport-guide.html">AG</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

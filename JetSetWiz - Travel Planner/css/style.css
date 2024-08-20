@@ -250,6 +250,7 @@ body {
     position: absolute;
     right: 0;
     bottom: 0;
+    width: 100%;
     z-index: -1;
 }
 
@@ -357,6 +358,12 @@ body {
     background-size: cover;
 }
 
+.recommendation {
+    background: linear-gradient(rgba(15, 23, 43, .7), rgba(15, 23, 43, .7)), url(../img/travel-home.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 /*** Team ***/
 .team-item {
@@ -635,4 +642,20 @@ form button{
 }
 form button:hover{
   background: #4534fe;
+}
+
+.dropdown .dropdown-menu {
+    display: none;
+}
+
+.dropdown:hover > .dropdown-menu, .dropend:hover > .dropdown-menu  {
+    display: block;
+    margin-top: .125em;
+}
+
+.dropend:hover > .dropdown-menu {
+    position: absolute;
+    top: 0%;
+    left: 100%;
+    margin-left: .125em;
 }

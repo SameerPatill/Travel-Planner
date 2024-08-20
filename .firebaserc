@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "travel-planner-c43a0"
+  },
+  "targets": {
+    "travel-planner-c43a0": {
+      "hosting": {
+        "jsw": [
+          "jetsetwiz"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
